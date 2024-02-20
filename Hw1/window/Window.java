@@ -1,5 +1,7 @@
 package window;
 
+// import glyph.Glyph;
+
 import glyph.*;
 
 public interface Window {

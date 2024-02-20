@@ -1,9 +1,9 @@
 package window;
 
-import glyph.*;
-
 import java.awt.*;
 import javax.swing.*;
+
+import glyph.*;
 
 public class SwingWindow implements Window {
 
