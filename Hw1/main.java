@@ -1,7 +1,7 @@
 import window.SwingWindow;
 import window.Window;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
 	Window window0=new SwingWindow("Lexi 0");
 	// SwingWindow.setLaF(1);
