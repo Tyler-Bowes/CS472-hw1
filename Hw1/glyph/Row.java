@@ -5,12 +5,13 @@ import window.Window;
 public class Row extends Glyph {
     // Implement the methods of the Glyph interface here
     @Override
-    public void draw() {
-        // Implementation for draw() method
+    public void draw(Window _window) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'draw'");
     }
     
     @Override
-    public void resize(int width, int height) {
+    public void sizing(int width, int height) {
         // Implementation for resize() method
     }
     
@@ -30,9 +31,5 @@ public class Row extends Glyph {
         // Implementation for add() method
     }
 
-    @Override
-    public void draw(Window _window) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'draw'");
-    }
+
 }

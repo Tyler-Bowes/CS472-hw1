@@ -4,8 +4,16 @@ import window.Window;
 
 public class Character extends Glyph {
     // Implement the methods of the Glyph interface here
+
+	private char character;
+
+
+    public Character(char character) {
+		this.character = character;
+    }
+
     @Override
-    public void resize(int width, int height) {
+    public void sizing(int width, int height) {
         // Implementation for resize() method
     }
     
@@ -26,14 +34,10 @@ public class Character extends Glyph {
     }
 
     @Override
-    public void draw() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'draw'");
-    }
+    public void draw(Window window) {
+        window.drawCharacter(character, 0, 0);
 
-    @Override
-    public void draw(Window _window) {
-        // TODO Auto-generated method stub
+
         throw new UnsupportedOperationException("Unimplemented method 'draw'");
     }
 }

@@ -3,20 +3,28 @@ package glyph;
 import window.Window;
 
 public class Rectangle extends Glyph {
-    // Implement the methods of the Glyph interface here
+
+    private int width;
+    private int height;
+
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
     @Override
-    public void draw() {
-        // Implementation for draw() method
+    public void draw(Window window) {
+        window.drawRectangle(0, 0, width, height);
     }
     
     @Override
-    public void resize(int width, int height) {
+    public void sizing(int width, int height) {
         // Implementation for resize() method
     }
     
     @Override
     public Glyph getChild(int index) {
-        // Implementation for getChild() method
+        //throw new UnsupportedOperationException("Unimplemented method 'getChild'");
         return null;
     }
     
@@ -30,9 +38,4 @@ public class Rectangle extends Glyph {
         // Implementation for add() method
     }
 
-    @Override
-    public void draw(Window _window) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'draw'");
-    }
 }
