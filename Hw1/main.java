@@ -10,6 +10,6 @@ public class main {
     // rect1.draw(window0);
     // window0.drawRectangle(0, 0, 20, 10);
     // Glyph a = new Character('a');
-    // window0.setContents(rect1);
+    window0.setContents(rect1);
     }
 }
