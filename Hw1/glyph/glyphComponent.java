@@ -1,7 +1,9 @@
 package glyph;
 
+import window.Window;
+
 // add implemntation of glyph interface
-public class glyphComponent implements Glyph {
+public class glyphComponent extends Glyph {
     @Override
     public void draw() {
         // Implementation for draw() method
@@ -26,6 +28,12 @@ public class glyphComponent implements Glyph {
     @Override
     public void add(Glyph glyph) {
         // Implementation for add() method
+    }
+
+    @Override
+    public void draw(Window _window) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'draw'");
     }
 }
 
