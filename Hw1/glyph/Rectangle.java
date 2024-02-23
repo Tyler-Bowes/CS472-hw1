@@ -11,8 +11,8 @@ public class Rectangle extends Glyph {
         setParent(null);
     }
 
-    public void draw(Window window) {
-        window.drawRectangle(getbounds().getX(), getbounds().getX(), getbounds().getWidth(), getbounds().getHeight());
-    }
+    // public void draw(Window window) {
+    //     window.drawRectangle(getbounds().getX(), getbounds().getX(), getbounds().getWidth(), getbounds().getHeight());
+    // }
     
 }
