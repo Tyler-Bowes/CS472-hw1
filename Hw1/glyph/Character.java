@@ -9,16 +9,12 @@ public class Character extends Glyph {
 
     public Character(char character) {
 		this.character = character;
+        getbounds().setBounds(0, 0, 0, 0); // initially 0
+        setParent(null);
     }
 
-    
-
-    @Override
     public void draw(Window window) {
-        window.drawCharacter(character, 0, 0);
-
-
-        throw new UnsupportedOperationException("Unimplemented method 'draw'");
+        window.drawCharacter(character, getbounds().getX(), getbounds().getY());
     }
 }
 

@@ -4,17 +4,15 @@ import window.Window;
 
 public class Rectangle extends Glyph {
 
-    private int width;
-    private int height;
+    // ** bounds keeps track of sizing **
 
     public Rectangle(int height, int width) {
-        this.width = width;
-        this.height = height;
+        getbounds().setBounds(0, 0, width, height);
+        setParent(null);
     }
 
     public void draw(Window window) {
-        window.drawRectangle(10, 10, width, height);
+        window.drawRectangle(getbounds().getX(), getbounds().getX(), getbounds().getWidth(), getbounds().getHeight());
     }
     
-
 }

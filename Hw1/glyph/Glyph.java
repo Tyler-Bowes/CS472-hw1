@@ -4,56 +4,52 @@ import javax.naming.OperationNotSupportedException;
 
 import window.Window;
 
-public class Glyph {
+public abstract class Glyph {
 
     private Glyph parent;
-    private int width;
-    private int height;
-    private int x;
-    private int y;
+    private Bounds bounds = new Bounds(0, 0, 0, 0); //x,y,height,width is all in bounds
 
-    // creating a class so I can access all sizing at once
-    public class GlyphProperties {
-        public int width;
-        public int height;
-        public int x;
-        public int y;
 
-        public GlyphProperties(int width, int height, int x, int y) {
-            this.width = width;
-            this.height = height;
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-    public GlyphProperties getProperties() {
-        return new GlyphProperties(width, height, x, y);
-    }
+    public void draw(Window _window) {/* drawing happens in extended classes */}
     
-    public void draw(Window _window) {
-        // implementation
+    public Glyph getParent() {
+        return parent;
     }
-    
+
+    public void setParent(Glyph parent) {
+        this.parent = parent;
+    }
+
     public void add(Glyph glyph) throws OperationNotSupportedException {
-        throw new OperationNotSupportedException("This Glyph cannot have children");
+        try {
+            throw new OperationNotSupportedException("This Glyph cannot have children");
+        } catch (OperationNotSupportedException e) {
+            e.printStackTrace();
+            return;
+        }
     }
     
     public void remove(Glyph glyph) throws OperationNotSupportedException {
-        throw new OperationNotSupportedException("This Glyph cannot have children");
-    }
-    
-    public Glyph getChild(int index) {
         try {
-            // implementation
-            return null;
-        } catch (Exception e) {
-            // handle the exception
-            return null; // or throw a new exception, depending on your requirements
+            throw new OperationNotSupportedException("This Glyph cannot have children");
+        } catch (OperationNotSupportedException e) {
+            e.printStackTrace();
+            return;
         }
     }
     
-    public void sizing(int width, int height) {
-        // implementation
+    // returns the child if there is one at specified index
+    public Glyph getChild(int index) {
+        try {
+            throw new OperationNotSupportedException("This Glyph cannot have children");
+        } catch (OperationNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // returns the bounds of the glyph so we can access through all glyphs
+    public Bounds getbounds() {
+        return bounds;
     }
 }

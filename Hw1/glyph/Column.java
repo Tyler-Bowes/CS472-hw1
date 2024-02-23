@@ -12,11 +12,6 @@ public class Column extends Glyph {
     }
     
     @Override
-    public void sizing(int width, int height) {
-        // Implementation for resize() method
-    }
-    
-    @Override
     public Glyph getChild(int index) {
         // Implementation for getChild() method
         return null;

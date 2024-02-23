@@ -9,11 +9,7 @@ public class Row extends Glyph {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'draw'");
     }
-    
-    @Override
-    public void sizing(int width, int height) {
-        // Implementation for resize() method
-    }
+
     
     @Override
     public Glyph getChild(int index) {
