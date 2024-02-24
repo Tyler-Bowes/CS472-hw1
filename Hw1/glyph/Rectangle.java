@@ -14,5 +14,10 @@ public class Rectangle extends Glyph {
     public void draw(Window window) {
         window.drawRectangle(getbounds().getX(), getbounds().getX(), getbounds().getWidth(), getbounds().getHeight());
     }
+
+    @Override
+    public void setSize(Window window) {
+        // Size is already set when made
+    }
     
 }

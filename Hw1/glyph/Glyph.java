@@ -10,7 +10,8 @@ public abstract class Glyph {
     private Bounds bounds = new Bounds(0, 0, 0, 0); //x,y,height,width is all in bounds
 
 
-    public void draw(Window _window) {/* drawing happens in extended classes */}
+    public abstract void draw(Window _window);
+    public abstract void setSize(Window window);
     
     public Glyph getParent() {
         return parent;
@@ -52,4 +53,12 @@ public abstract class Glyph {
     public Bounds getbounds() {
         return bounds;
     }
+    public void adjustBounds(Bounds cursor) {
+        throw new UnsupportedOperationException("Unimplemented method 'adjustBounds'");
+    }
+    public void compose() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'compose'");
+    }
+
 }

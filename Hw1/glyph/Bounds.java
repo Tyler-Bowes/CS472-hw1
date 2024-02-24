@@ -29,6 +29,7 @@ public class Bounds {
         return height;
     }
 
+    // one setter for all fields
     public void setBounds(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;

@@ -35,7 +35,7 @@ public class Column extends Composition {
         getbounds().setBounds(x, y, getbounds().getWidth(), getbounds().getHeight());
     }
 
-    public Bounds moveCursor(Bounds cursor, Glyph child) {
+    public Bounds moveBounds(Bounds cursor, Glyph child) {
         // only changing cursor's y position (adding height of child)
         cursor.setBounds(cursor.getY(), cursor.getY() + child.getbounds().getHeight(), cursor.getWidth(), cursor.getHeight());
         return cursor;
@@ -46,5 +46,24 @@ public class Column extends Composition {
         int height = cursor.getY() - getbounds().getY();
         getbounds().setBounds(getbounds().getX(), getbounds().getY(), getbounds().getWidth(), height);
     }
+
+    @Override
+    public void setSize(Window window) {
+        Glyph child;
+        int maxWidth = 0;
+        int height = 0;
+        for (int index = 0; index < getChildren().size(); index++) {
+            if (getChild(index) != null) {
+                child = getChild(index);
+                if (maxWidth < child.getbounds().getWidth()) { // keep the maximum width of children
+                    maxWidth = child.getbounds().getWidth();
+                }
+                height += child.getbounds().getHeight();
+            }
+        }
+        // set the width and height of column with all children
+        getbounds().setBounds(getbounds().getX(), getbounds().getY(), maxWidth, height);
+    }
+
 
 }

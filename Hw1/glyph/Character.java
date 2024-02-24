@@ -16,5 +16,11 @@ public class Character extends Glyph {
     public void draw(Window window) {
         window.drawCharacter(character, getbounds().getX(), getbounds().getY());
     }
+
+    @Override
+    public void setSize(Window window) {
+        // x and y don't change, width and height are taken by window methods
+        getbounds().setBounds(getbounds().getX(), getbounds().getY(), window.charHeight(character), window.charWidth(character));
+    }
 }
 

@@ -3,8 +3,12 @@ package glyph;
 import window.Window;
 
 public abstract class Composition extends CompositeGlyph {
+    
     private SimpleCompositor compositor;
     
+    public abstract Bounds moveBounds(Bounds cursor, Glyph child);
+    public abstract void adjustBounds(Bounds cursor);
+
     public void compose(){
         compositor.compose();
     }
@@ -31,4 +35,5 @@ public abstract class Composition extends CompositeGlyph {
     public void draw(Window window){
         super.draw(window);
     }
+
 }
