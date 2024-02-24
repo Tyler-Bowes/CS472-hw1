@@ -57,8 +57,6 @@ public abstract class Glyph {
         throw new UnsupportedOperationException("Unimplemented method 'adjustBounds'");
     }
     public void compose() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compose'");
     }
     public Bounds moveBounds(Bounds cursor, Glyph child) {
         // TODO Auto-generated method stub
@@ -66,8 +64,7 @@ public abstract class Glyph {
         throw new UnsupportedOperationException("Unimplemented method 'moveBounds'");
     }
     public void setPosition(Bounds cursor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setPosition'");
+        
     }
 
 }
