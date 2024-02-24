@@ -29,11 +29,11 @@ public class SimpleCompositor {
                     // ask child to set size, based on window
                     child.setSize(window);
                     // ask child to set position, based on cursor
-                    child.adjustBounds(cursor);
+                    child.moveBounds(cursor);
                     // ask child to compose itself, recursively
                     child.compose();
                     // ask parent to adjust itself and cursor, based on child
-                    composition.moveBounds(cursor, child);
+                    cursor = composition.moveBounds(cursor, child);
                 }
             }
             // ask parent to adjust itself, based on cursor
