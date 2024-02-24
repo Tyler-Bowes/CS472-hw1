@@ -1,15 +1,27 @@
 
 import window.*;
 import glyph.*;
-import glyph.Character;
+import glyph.Character; // has to be manually imported for some reason?
 
 public class main {
     public static void main(String[] args) {
-	Window window0=new SwingWindow("Lexi 0");
+	Window window = new SwingWindow("Lexi 0");
+    SimpleCompositor simcom = new SimpleCompositor(window);
+    Row row1 = new Row(simcom);
+    Glyph a = new Character('a');
+    Glyph b = new Character('b');
+    Glyph c = new Character('c');
     Glyph rect1 = new Rectangle(20, 10);
-    // rect1.draw(window0);
-    // window0.drawRectangle(0, 0, 20, 10);
-    // Glyph a = new Character('a');
-    window0.setContents(rect1);
+    
+    try {
+        row1.addChild(a, 0);
+        row1.addChild(rect1, 1);
+        row1.addChild(b, 2);
+        row1.addChild(c, 3);
+    } catch (UnsupportedOperationException e) {
+        e.printStackTrace();
+    }
+
+    window.setContents(row1);
     }
 }
