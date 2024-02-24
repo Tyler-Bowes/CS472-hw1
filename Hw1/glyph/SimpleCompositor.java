@@ -46,11 +46,11 @@ public class SimpleCompositor implements Compositor{ // cannont extend b/c it's 
         
 
         // ask parent to adjust itself, based on cursor
-        if (composition.getChild(0) != null) {
-            Bounds parent_bounds = composition.getChild(0).getbounds();
-            composition.getbounds().setBounds(parent_bounds.getX(), parent_bounds.getY(), 
-                    parent_bounds.getWidth(), parent_bounds.getHeight());
-        }
+        // if (composition.getChild(0) != null) {
+        //     Bounds parent_bounds = composition.getChild(0).getbounds();
+        //     composition.getbounds().setBounds(parent_bounds.getX(), parent_bounds.getY(), 
+        //             parent_bounds.getWidth(), parent_bounds.getHeight());
+        // }
     }
     
 }
