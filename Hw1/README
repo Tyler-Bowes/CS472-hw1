@@ -35,7 +35,39 @@ glyph-
 
 # Testing/Test Suit
 
+I first tested some functionality with have single glyphs like rectangles and characters.
+After that, rows and columns with children.  As an example of a row with children being
+tested through main, I would do something like this inside of main():
 
+    SimpleCompositor simcom = new SimpleCompositor(window);
+    Row row1 = new Row(simcom);
+    Glyph a = new Character('a');
+    Glyph X = new Character('X');
+    Glyph b = new Character('b');
+    Glyph rect1 = new Rectangle(10, 20);
+    
+    try {
+        row1.addChild(a, 0);
+        row1.addChild(rect1, 1);
+        row1.addChild(X, 2);
+        row1.addChild(b, 3);
+    } catch (UnsupportedOperationException e) {
+        e.printStackTrace();
+    }
+    window.setContents(row1);
+
+Then to test more, putting columns inside of this.  So, for sake of not putting more lines of
+code, I would replace the Character Glyph X with a colum full of X, Y, Z Characters.  And this would
+work with the current functionalitly of main.
+
+Then I would put this entire row inside of a column so then I could add another row to the column.
+And that is as far as my testing went.
+
+# Other Observations
+
+Currently spacing is "wonky", meaning myprogram, I think what looks like, doubles the spacing for the width
+and gives a little less than a full Glyph's height for the height. Other than than that minor spacing problem
+functionality of Lexi works fine.
 
 # Compiling 
 
