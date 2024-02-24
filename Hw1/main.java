@@ -11,7 +11,7 @@ public class main {
     Glyph a = new Character('a');
     Glyph b = new Character('b');
     Glyph c = new Character('c');
-    Glyph rect1 = new Rectangle(20, 10);
+    Glyph rect1 = new Rectangle(10, 20);
     
     try {
         row1.addChild(a, 0);
