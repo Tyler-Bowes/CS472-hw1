@@ -3,7 +3,7 @@ import window.*;
 import glyph.*;
 import glyph.Character; // has to be manually imported for some reason?
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 	Window window = new SwingWindow("Lexi 0");
     SimpleCompositor simcom = new SimpleCompositor(window);
