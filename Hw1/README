@@ -1,0 +1,49 @@
+# Project
+* CS 472
+* HW1
+* 2/23/2024
+* Tyler Bowes
+****************
+ 
+# Overview
+
+This program is a implementation of the text editor Lexi.  This has been implemented
+with two main design patterns, Composite and Strategy.  Every class extends (does not
+'implement' other than SimpleCompositor implementing Compositor) from root Glyph class,
+see UML for visual.  With the use of these strategies once the program runs it will
+open a text editor displaying what was prompted inside main.java. 
+
+# Included Files
+
+main.java
+README
+UML image
+window-
+    SwingWindow.java
+    Window.java
+glyph-
+    Bounds.java
+    Character.java
+    Column.java
+    CompositeGlyph.java
+    Composition.java
+    Compositor.java
+    Glyph.java
+    Rectangle.java
+    Row.java
+    SimpleCompositor.java
+
+# Testing/Test Suit
+
+
+
+# Compiling 
+
+To compile and run the program go inside the folder with main inside of it.
+When you are in the correct folder with main run:
+
+$    javac main.java
+
+to run:
+
+$    java main

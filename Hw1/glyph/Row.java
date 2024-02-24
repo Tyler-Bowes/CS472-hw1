@@ -34,7 +34,7 @@ public class Row extends Composition {
         getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
     }
 
-    public void moveBounds(Bounds cursor, Glyph child) {
+    public Bounds moveBounds(Bounds cursor, Glyph child) {
         //only changing cursor's x position (adding width of child)
         // cursor.setBounds(cursor.getX() + child.getbounds().getWidth(), cursor.getY(), child.getbounds().getWidth(), child.getbounds().getWidth());
         
@@ -50,7 +50,11 @@ public class Row extends Composition {
         } 
         else { /* no need to update width */ }
         
-        getbounds().setBounds(getbounds().getX() + child.getbounds().getWidth(), getbounds().getY(), width, Height);
+        getbounds().setBounds(getbounds().getX() + child.getbounds().getWidth(), getbounds().getY(), width, Height); 
+        
+        cursor.setBounds(getbounds().getX(), getbounds().getY(), cursor.getWidth(), cursor.getHeight());;
+        
+        return cursor;
     }
 
     public void adjustBounds (Bounds cursor) {

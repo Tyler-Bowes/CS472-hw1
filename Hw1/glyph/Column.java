@@ -35,7 +35,7 @@ public class Column extends Composition {
         getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
     }
 
-    public void moveBounds(Bounds cursor, Glyph child) {
+    public Bounds moveBounds(Bounds cursor, Glyph child) {
         
         int Height = getbounds().getHeight(); // current max
         if (Height < child.getbounds().getY() + child.getbounds().getHeight() - getbounds().getY()) { // keep the maximum height of children
@@ -50,6 +50,9 @@ public class Column extends Composition {
         else { /* no need to update width */ }
         
         getbounds().setBounds(getbounds().getX(), getbounds().getY() + child.getbounds().getHeight(), width, Height);
+        cursor.setBounds(getbounds().getX(), getbounds().getY(), cursor.getWidth(), cursor.getHeight());;
+        
+        return cursor;
     }
 
     public void adjustBounds (Bounds cursor) {
