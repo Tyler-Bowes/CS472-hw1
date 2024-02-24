@@ -38,7 +38,7 @@ public class SimpleCompositor implements Compositor{ // cannont extend b/c it's 
             // ask parent to adjust itself, based on cursor
             composition.adjustBounds(cursor);
             //checks if width or height has changed
-            // composition.setSize(window);
+            composition.setSize(window);
         } catch (Exception e) {
             System.out.println("Error when running compose method!: " + e);
         }

@@ -6,7 +6,7 @@ public abstract class Composition extends CompositeGlyph {
     
     private Compositor compositor;
     
-    public abstract Bounds moveBounds(Bounds cursor, Glyph child);
+    public abstract void moveBounds(Bounds cursor, Glyph child);
     public abstract void adjustBounds(Bounds cursor);
 
     public void compose(){

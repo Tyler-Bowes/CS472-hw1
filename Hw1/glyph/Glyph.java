@@ -60,7 +60,7 @@ public abstract class Glyph {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'compose'");
     }
-    public Bounds moveBounds(Bounds cursor, Glyph child) {
+    public void moveBounds(Bounds cursor, Glyph child) {
         // TODO Auto-generated method stub
         // System.out.println("Unimplemented method 'moveBounds'");
         throw new UnsupportedOperationException("Unimplemented method 'moveBounds'");
