@@ -20,7 +20,7 @@ public abstract class Glyph {
         this.parent = parent;
     }
 
-    public void add(Glyph glyph) throws OperationNotSupportedException {
+    public void addChild(Glyph glyph, int index) throws OperationNotSupportedException {
         try {
             throw new OperationNotSupportedException("This Glyph cannot have children");
         } catch (OperationNotSupportedException e) {

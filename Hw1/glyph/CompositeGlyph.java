@@ -1,45 +1,51 @@
 package glyph;
 
-import java.util.Iterator;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import window.Window;
 
-// public abstract class CompositeGlyph extends Glyph {
+public abstract class CompositeGlyph extends Glyph{
 
-//     private Vector<Glyph> _children;
+    private ArrayList<Glyph> children = new ArrayList<Glyph>();
 
-//     // ...
-
-//     public Iterator<Glyph> createIterator() {
-// 	return new VectorIterator<Glyph>(_children);
-//     }
-
-// }
-
-public class CompositeGlyph extends Glyph{
-        // Implement the methods of the Glyph interface here
-
-        @Override
-        public void draw(Window _window) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'draw'");
+    public void draw(Window _window) {
+        for ( int child_index = 0; child_index < children.size(); child_index++ ) {
+            if (children.get(child_index) != null) {
+                children.get(child_index).draw(_window); // draws each child
+            }
         }
-        
-        @Override
-        public Glyph getChild(int index) {
-            // Implementation for getChild() method
-            return null;
+    }
+    
+    public void addChild(Glyph glyph, int index) throws UnsupportedOperationException {
+        if (index < 0) {
+            throw new UnsupportedOperationException("Index out of bounds");
         }
-        
-        @Override
-        public void remove(Glyph glyph) {
-            // Implementation for remove() method
+        // do something later if index > children.size()?
+        children.add(index, glyph);
+    }
+
+    public void remove(Glyph glyph) throws UnsupportedOperationException{ 
+        if (!children.contains(glyph)) {
+            throw new UnsupportedOperationException("Child not found");            
         }
-        
-        @Override
-        public void add(Glyph glyph) {
-            // Implementation for add() method
+        children.remove(glyph);
+    }
+
+
+    public Glyph getChild(int index) throws UnsupportedOperationException {
+        if (index < 0 || index >= children.size()) {
+            throw new UnsupportedOperationException("Index out of bounds");
         }
+        return children.get(index);
+    }
+
+    public ArrayList<Glyph> getChildren() {
+        return children;
+    }
+
+    public void setChildren(ArrayList<Glyph> children) {
+        this.children = children;
+    }
+
 
 }

@@ -1,30 +1,50 @@
 package glyph;
 
+import java.util.ArrayList;
+
 import window.Window;
 
-public class Column extends Glyph {
+public class Column extends Composition {
     // Implement the methods of the Glyph interface here
 
-    @Override
-    public void draw(Window _window) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'draw'");
+    public Column(SimpleCompositor compositor){
+        setParent(null);
+        getbounds().setBounds(0, 0, 0, 0);
+        setCompositor(compositor);
+        setChildren(new ArrayList<Glyph>());
+        getCompositor().setComposition(this); // set the composition for the compositor
     }
-    
-    @Override
-    public Glyph getChild(int index) {
-        // Implementation for getChild() method
-        return null;
+
+    public void draw(Window window){
+        super.draw(window);
     }
-    
-    @Override
-    public void remove(Glyph glyph) {
-        // Implementation for remove() method
+
+    public Glyph getChild(int index) throws UnsupportedOperationException {
+        return super.getChild(index);
     }
-    
-    @Override
-    public void add(Glyph glyph) {
-        // Implementation for add() method
+
+    public void addChild(Glyph glyph, int index) throws UnsupportedOperationException {
+        super.addChild(glyph, index);
+    }
+
+    public void remove(Glyph glyph) throws UnsupportedOperationException {
+        super.remove(glyph);
+    }
+
+    public void setPosition(int x, int y) {
+        getbounds().setBounds(x, y, getbounds().getWidth(), getbounds().getHeight());
+    }
+
+    public Bounds moveCursor(Bounds cursor, Glyph child) {
+        // only changing cursor's y position (adding height of child)
+        cursor.setBounds(cursor.getY(), cursor.getY() + child.getbounds().getHeight(), cursor.getWidth(), cursor.getHeight());
+        return cursor;
+    }
+
+    public void adjustBounds (Bounds cursor) {
+        // ajusting width of column
+        int height = cursor.getY() - getbounds().getY();
+        getbounds().setBounds(getbounds().getX(), getbounds().getY(), getbounds().getWidth(), height);
     }
 
 }
