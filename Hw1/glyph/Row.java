@@ -35,9 +35,7 @@ public class Row extends Composition {
     }
 
     public Bounds moveBounds(Bounds cursor, Glyph child) {
-        //only changing cursor's x position (adding width of child)
-        // cursor.setBounds(cursor.getX() + child.getbounds().getWidth(), cursor.getY(), child.getbounds().getWidth(), child.getbounds().getWidth());
-        
+        // this ajusts the parent (current row) bounds and the cursor bounds
         int Height = getbounds().getHeight(); // current max
         if (Height < child.getbounds().getHeight()) { // keep the maximum height of children
             Height = child.getbounds().getHeight();

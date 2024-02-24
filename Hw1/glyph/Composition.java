@@ -25,11 +25,12 @@ public abstract class Composition extends CompositeGlyph {
         super.addChild(glyph, index);
 
         glyph.setParent(this);
+        this.compose();
     }
 
     public void remove(Glyph glyph) throws UnsupportedOperationException{
         super.remove(glyph);
-
+        this.compose();
     }
 
     public void draw(Window window){
