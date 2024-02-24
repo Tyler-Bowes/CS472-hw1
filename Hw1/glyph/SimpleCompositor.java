@@ -2,7 +2,7 @@ package glyph;
 
 import window.Window;
 
-public class SimpleCompositor {
+public class SimpleCompositor implements Compositor{ // cannont extend b/c it's an interface
 
     private Composition composition;
     private Window window;
@@ -29,7 +29,7 @@ public class SimpleCompositor {
                     // ask child to set size, based on window
                     child.setSize(window);
                     // ask child to set position, based on cursor
-                    child.moveBounds(cursor);
+                    child.moveBounds(cursor, child);
                     // ask child to compose itself, recursively
                     child.compose();
                     // ask parent to adjust itself and cursor, based on child
