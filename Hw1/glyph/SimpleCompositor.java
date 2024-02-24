@@ -33,7 +33,7 @@ public class SimpleCompositor {
                     // ask child to compose itself, recursively
                     child.compose();
                     // ask parent to adjust itself and cursor, based on child
-                    cursor = composition.moveBounds(cursor, child);
+                    composition.moveBounds(cursor, child);
                 }
             }
             // ask parent to adjust itself, based on cursor
