@@ -9,15 +9,15 @@ public class main {
     SimpleCompositor simcom = new SimpleCompositor(window);
     Row row1 = new Row(simcom);
     Glyph a = new Character('a');
+    Glyph X = new Character('X');
     Glyph b = new Character('b');
-    Glyph c = new Character('c');
     Glyph rect1 = new Rectangle(10, 20);
     
     try {
         row1.addChild(a, 0);
         row1.addChild(rect1, 1);
-        row1.addChild(b, 2);
-        row1.addChild(c, 3);
+        row1.addChild(X, 2);
+        row1.addChild(b, 3);
     } catch (UnsupportedOperationException e) {
         e.printStackTrace();
     }
