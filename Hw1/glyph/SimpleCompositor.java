@@ -34,6 +34,7 @@ public class SimpleCompositor implements Compositor{ // cannont extend b/c it's 
                     child.compose();
                     // ask parent to adjust itself and cursor, based on child
                     composition.moveBounds(cursor, child);
+                    System.out.println("Index: " + index + "Cursor: " + cursor.getX() + ", " + cursor.getY() + ", " + cursor.getWidth() + ", " + cursor.getHeight());
                 }
             }
             // ask parent to adjust itself, based on cursor
