@@ -31,8 +31,8 @@ public class Column extends Composition {
         super.remove(glyph);
     }
 
-    public void setPosition(int x, int y) {
-        getbounds().setBounds(x, y, getbounds().getWidth(), getbounds().getHeight());
+    public void setPosition(Bounds cursor) {
+        getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
     }
 
     public Bounds moveBounds(Bounds cursor, Glyph child) {

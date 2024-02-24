@@ -62,8 +62,12 @@ public abstract class Glyph {
     }
     public Bounds moveBounds(Bounds cursor, Glyph child) {
         // TODO Auto-generated method stub
-        System.out.println("Unimplemented method 'moveBounds'");
+        // System.out.println("Unimplemented method 'moveBounds'");
         throw new UnsupportedOperationException("Unimplemented method 'moveBounds'");
+    }
+    public void setPosition(Bounds cursor) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setPosition'");
     }
 
 }

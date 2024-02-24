@@ -29,12 +29,12 @@ public class SimpleCompositor implements Compositor{ // cannont extend b/c it's 
                     // ask child to set size, based on window
                     child.setSize(window);
                     // ask child to set position, based on cursor
-                    child.moveBounds(cursor, child);
+                    child.setPosition(cursor);
                     // ask child to compose itself, recursively
                     child.compose();
                     // ask parent to adjust itself and cursor, based on child
                     composition.moveBounds(cursor, child);
-                    System.out.println("Index: " + index + "Cursor: " + cursor.getX() + ", " + cursor.getY() + ", " + cursor.getWidth() + ", " + cursor.getHeight());
+                    // System.out.println("Index: " + index + "Cursor: " + cursor.getX() + ", " + cursor.getY() + ", " + cursor.getWidth() + ", " + cursor.getHeight());
                 }
             }
             // ask parent to adjust itself, based on cursor

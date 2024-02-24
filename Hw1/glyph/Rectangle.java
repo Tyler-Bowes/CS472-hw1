@@ -20,4 +20,7 @@ public class Rectangle extends Glyph {
         // Size is already set when made
     }
     
+    public void setPosition(Bounds cursor) {
+        getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
+    }
 }
