@@ -1,7 +1,5 @@
 package window;
 
-// import glyph.Glyph;
-
 import glyph.*;
 
 public interface Window {
@@ -13,5 +11,8 @@ public interface Window {
   int charHeight(char c);
 
   void setContents(Glyph glyph);
+
+  void addBorder(int x1, int y1, int x2, int y2, int width);
+  void addScrollBar(int x, int y, int width, int height);
 
 }
