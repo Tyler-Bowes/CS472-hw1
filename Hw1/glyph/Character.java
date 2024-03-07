@@ -9,8 +9,8 @@ public class Character extends Glyph {
 
     public Character(char character) {
 		this.character = character;
-        getbounds().setBounds(0, 0, 0, 0); // initially 0
-        setParent(null);
+        // getbounds().setBounds(0, 0, 0, 0); // initially 0
+        // setParent(null);
     }
 
     public void draw(Window window) {

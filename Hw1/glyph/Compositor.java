@@ -1,6 +1,6 @@
 package glyph;
 
-public interface Compositor {
+interface Compositor {
     void setComposition(Composition composition);
     void compose();
 }
