@@ -69,7 +69,7 @@ public class main {
         e.printStackTrace();
     }
 
-    window.setContents(row1);
+    window.setContents(col2);
     }
 
 }
