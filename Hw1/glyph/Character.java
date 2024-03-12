@@ -20,11 +20,11 @@ public class Character extends Glyph {
     @Override
     public void setSize(Window window) {
         // x and y don't change, width and height are taken by window methods
-        getbounds().setBounds(getbounds().getX(), getbounds().getY(), window.charHeight(character), window.charWidth(character));
+        getbounds().setBounds(getbounds().getX(), getbounds().getY(), window.charWidth(character), window.charHeight(character));
     }
 
-    public void setPosition(Bounds cursor) {
-        getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
-    }
+    // public void setPosition(Bounds cursor) {
+    //     getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
+    // }
 }
 
