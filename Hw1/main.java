@@ -72,7 +72,7 @@ public class main {
         e.printStackTrace();
     }
 
-    window.setContents(col2);
+    window.setContents(border1);
     }
 
 }

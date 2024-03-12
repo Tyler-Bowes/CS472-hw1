@@ -7,7 +7,6 @@ import window.Window;
 public class Embellishment extends Composition{
 
 
-    @Override
     public void addChild(Glyph glyph, int index) throws UnsupportedOperationException { 
         try {
             getChildren().get(0).addChild(glyph, index);
@@ -25,7 +24,6 @@ public class Embellishment extends Composition{
         current.compose();
     }
 
-    @Override
     public void remove(Glyph glyph) throws UnsupportedOperationException {
         try {
             getChildren().get(0).remove(glyph);
@@ -41,18 +39,15 @@ public class Embellishment extends Composition{
         current.compose();
     }
 
-    @Override
     public Bounds moveBounds(Bounds cursor, Glyph child) {
         return cursor;
     }
 
-    @Override
     public void adjustBounds(Bounds cursor) {
         Bounds bounds = getChildren().get(0).getbounds();
         getbounds().setBounds(bounds.getX(),bounds.getY(), bounds.getWidth(), bounds.getHeight());
     }
 
-    @Override
     public void setSize(Window window) {
         getChildren().get(0).setSize(window);
     }
