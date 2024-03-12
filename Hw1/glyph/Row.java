@@ -7,6 +7,7 @@ import window.Window;
 public class Row extends Composition {
     
     public Row(SimpleCompositor compositor){
+        super(compositor); // Call the superclass constructor
         setCompositor(compositor);
         getCompositor().setComposition(this); // set the composition for the compositor
     }

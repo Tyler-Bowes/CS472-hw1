@@ -6,10 +6,14 @@ import window.Window;
 
 public class Embellishment extends Composition{
 
+    public Embellishment(Compositor compositor, Glyph glyph) {
+        super(compositor);
+        super.addChild(getParent(), 0);
+    }
 
     public void addChild(Glyph glyph, int index) throws UnsupportedOperationException { 
         try {
-            getChildren().get(0).addChild(glyph, index);
+            getChild().addChild(glyph, index);
         } catch (OperationNotSupportedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

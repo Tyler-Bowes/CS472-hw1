@@ -8,8 +8,8 @@ public class Border extends Embellishment{
     
     private int border_width;
 
-    public Border(Compositor compositor, int border_width){
-        // super(compositor);
+    public Border(Compositor compositor, Glyph glyph, int border_width){
+        super(compositor, glyph);
         this.border_width = border_width;
         // getbounds().setBounds(0, 0, 0, 0);
         super.setChildren(new ArrayList<>());
@@ -25,5 +25,11 @@ public class Border extends Embellishment{
                          getChild().getbounds().getY() + getChild().getbounds().getHeight() + 3,
                          border_width);
     }
+
+    // public setPosition
+
+    // // set position x + size, y + size
+
+    // adjustBounds
 
 }
