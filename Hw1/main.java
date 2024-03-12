@@ -29,6 +29,8 @@ public class main {
     SimpleCompositor simcom2 = new SimpleCompositor(window);
     SimpleCompositor simcom3 = new SimpleCompositor(window);
     SimpleCompositor simcom4 = new SimpleCompositor(window);
+    SimpleCompositor simcom5 = new SimpleCompositor(window); // HW2
+    Border border1 = new Border(simcom5, 2);  // HW2
     Row row1 = new Row(simcom1);
     Row row2 = new Row(simcom2);
     Column col1 = new Column(simcom3);
@@ -65,6 +67,7 @@ public class main {
 
         col2.addChild(row1, 0);
         col2.addChild(row2, 1);
+        border1.addChild(col2, 0);
     } catch (UnsupportedOperationException e) {
         e.printStackTrace();
     }
