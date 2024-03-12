@@ -13,27 +13,26 @@ public class Row extends Composition {
     }
 
     public void setPosition(Bounds cursor) {
-        getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
+        getbounds().setBounds(cursor.getX(), cursor.getY(), cursor.getWidth(), cursor.getHeight());
     }
 
     public Bounds moveBounds(Bounds cursor, Glyph child) {
+        Bounds child_bounds = child.getbounds();
+        Bounds parent_bounds = getbounds();
+
+        int Height = Math.max(parent_bounds.getHeight(), child_bounds.getHeight());
+
+        int width = Math.max(parent_bounds.getX() + parent_bounds.getWidth(),
+                             child_bounds.getX() + child_bounds.getWidth() - parent_bounds.getX()); 
+
+
         // this ajusts the parent (current row) bounds and the cursor bounds
-        int Height = getbounds().getHeight(); // current max
-        if (Height < child.getbounds().getHeight()) { // keep the maximum height of children
-            Height = child.getbounds().getHeight();
-        } 
-        else { /* no need to update height */}
         
-        int width = getbounds().getX() + child.getbounds().getWidth(); // sum the width of children
-        if (width < child.getbounds().getX() + child.getbounds().getWidth() - getbounds().getX()) {
-            width = child.getbounds().getX() + child.getbounds().getWidth() - getbounds().getX();
-        } 
-        else { /* no need to update width */ }
         
-        getbounds().setBounds(getbounds().getX() + child.getbounds().getWidth(), getbounds().getY(), width, Height); 
+        parent_bounds.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height); 
         
-        cursor.setBounds(getbounds().getX(), getbounds().getY(), cursor.getWidth(), cursor.getHeight());;
-        
+        cursor.setBounds(cursor.getX() + child_bounds.getWidth(), cursor.getY(), cursor.getWidth(), cursor.getHeight());;
+
         return cursor;
     }
 
@@ -45,20 +44,20 @@ public class Row extends Composition {
 
     @Override
     public void setSize(Window window) {
-        Glyph child;
-        int maxHeight = 0;
-        int width = 0;
-        for (int index = 0; index < getChildren().size(); index++) {
-            if (getChild(index) != null) {
-                child = getChild(index);
-                if (maxHeight < child.getbounds().getHeight()) { // keep the maximum height of children
-                    maxHeight = child.getbounds().getHeight();
-                }
-                width += child.getbounds().getWidth(); // sum the width of children
-            }
-        }
-        // set the width and height of column with all children
-        getbounds().setBounds(getbounds().getX(), getbounds().getY(), width, maxHeight);
+        // Glyph child;
+        // int maxHeight = 0;
+        // int width = 0;
+        // for (int index = 0; index < getChildren().size(); index++) {
+        //     if (getChild(index) != null) {
+        //         child = getChild(index);
+        //         if (maxHeight < child.getbounds().getHeight()) { // keep the maximum height of children
+        //             maxHeight = child.getbounds().getHeight();
+        //         }
+        //         width += child.getbounds().getWidth(); // sum the width of children
+        //     }
+        // }
+        // // set the width and height of column with all children
+        // getbounds().setBounds(getbounds().getX(), getbounds().getY(), width, maxHeight);
     }
 
 }
