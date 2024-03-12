@@ -22,6 +22,7 @@ public abstract class CompositeGlyph extends Glyph{
         }
         // do something later if index > children.size()?
         children.add(index, glyph);
+        glyph.setParent(this);
     }
 
     public void remove(Glyph glyph) throws UnsupportedOperationException{ 
@@ -29,6 +30,7 @@ public abstract class CompositeGlyph extends Glyph{
             throw new UnsupportedOperationException("Child not found");            
         }
         children.remove(glyph);
+        glyph.setParent(null);
     }
 
 
@@ -43,9 +45,9 @@ public abstract class CompositeGlyph extends Glyph{
         return children;
     }
 
-    public void setChildren(ArrayList<Glyph> children) {
-        this.children = children;
-    }
+    // public void setChildren(ArrayList<Glyph> children) {
+    //     this.children = children;
+    // }
 
 
 }

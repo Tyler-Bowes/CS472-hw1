@@ -1,13 +1,10 @@
 package glyph;
 
-import window.Window;
-
 public abstract class Composition extends CompositeGlyph {
     
     private Compositor compositor;
     
     public Composition(Compositor compositor) {
-        super();
         this.compositor = compositor;
     }
 
