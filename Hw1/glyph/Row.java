@@ -12,10 +12,6 @@ public class Row extends Composition {
         getCompositor().setComposition(this); // set the composition for the compositor
     }
 
-    public void setPosition(Bounds cursor) {
-        getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
-    }
-
     public Bounds moveBounds(Bounds cursor, Glyph child) {
         // this ajusts the parent (current row) bounds and the cursor bounds
         int Height = getbounds().getHeight(); // current max

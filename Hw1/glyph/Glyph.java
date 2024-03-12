@@ -63,8 +63,9 @@ public abstract class Glyph {
         // System.out.println("Unimplemented method 'moveBounds'");
         throw new UnsupportedOperationException("Unimplemented method 'moveBounds'");
     }
+    
     public void setPosition(Bounds cursor) {
-        
+        getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
     }
 
 }

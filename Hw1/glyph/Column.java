@@ -13,9 +13,9 @@ public class Column extends Composition {
         getCompositor().setComposition(this); // set the composition for the compositor
     }
 
-    public void setPosition(Bounds cursor) {
-        getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
-    }
+    // public void setPosition(Bounds cursor) {
+    //     getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
+    // }
 
     public Bounds moveBounds(Bounds cursor, Glyph child) {
         Bounds child_bounds = child.getbounds();
