@@ -13,22 +13,21 @@ public class Row extends Composition {
     }
 
     public Bounds moveBounds(Bounds cursor, Glyph child) {
+        Bounds child_bounds = child.getbounds();
+        Bounds parent_bounds = getbounds();
+
+        int Height = Math.max(parent_bounds.getHeight(), child_bounds.getHeight());
+
+        int width = Math.max(parent_bounds.getX() + parent_bounds.getWidth(),
+                             child_bounds.getX() + child_bounds.getWidth() - parent_bounds.getX()); 
+
+
         // this ajusts the parent (current row) bounds and the cursor bounds
-        int Height = getbounds().getHeight(); // current max
-        if (Height < child.getbounds().getHeight()) { // keep the maximum height of children
-            Height = child.getbounds().getHeight();
-        } 
-        else { /* no need to update height */}
         
-        int width = getbounds().getX() + child.getbounds().getWidth(); // sum the width of children
-        if (width < child.getbounds().getX() + child.getbounds().getWidth() - getbounds().getX()) {
-            width = child.getbounds().getX() + child.getbounds().getWidth() - getbounds().getX();
-        } 
-        else { /* no need to update width */ }
         
-        getbounds().setBounds(getbounds().getX(), getbounds().getY(), width, Height); 
+        parent_bounds.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height); 
         
-        cursor.setBounds(getbounds().getX() + child.getbounds().getWidth(), getbounds().getY(), cursor.getWidth(), cursor.getHeight());;
+        cursor.setBounds(cursor.getX() + child_bounds.getWidth(), cursor.getY(), cursor.getWidth(), cursor.getHeight());;
         
         return cursor;
     }

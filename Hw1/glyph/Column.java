@@ -27,7 +27,7 @@ public class Column extends Composition {
         
         parent_bounds.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height);
 
-        cursor.setBounds(parent_bounds.getX(), parent_bounds.getY() + child_bounds.getHeight(), cursor.getWidth(), cursor.getHeight());;
+        cursor.setBounds(cursor.getX(), cursor.getY() + child_bounds.getHeight(), cursor.getWidth(), cursor.getHeight());;
         
         return cursor;
     }
