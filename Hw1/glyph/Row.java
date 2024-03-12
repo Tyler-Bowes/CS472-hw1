@@ -8,8 +8,8 @@ public class Row extends Composition {
     
     public Row(SimpleCompositor compositor){
         super(compositor); // Call the superclass constructor
-        setCompositor(compositor);
-        getCompositor().setComposition(this); // set the composition for the compositor
+        // setCompositor(compositor);
+        // getCompositor().setComposition(this); // set the composition for the compositor
     }
 
     public Bounds moveBounds(Bounds cursor, Glyph child) {

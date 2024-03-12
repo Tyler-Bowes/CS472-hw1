@@ -9,8 +9,8 @@ public class Column extends Composition {
 
     public Column(SimpleCompositor compositor){
         super(compositor); // Call the superclass constructor
-        setCompositor(compositor);
-        getCompositor().setComposition(this); // set the composition for the compositor
+        // setCompositor(compositor);
+        // getCompositor().setComposition(this); // set the composition for the compositor
     }
 
     // public void setPosition(Bounds cursor) {
