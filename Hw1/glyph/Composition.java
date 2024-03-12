@@ -41,8 +41,8 @@ public abstract class Composition extends CompositeGlyph {
         current.compose();
     }
 
-    public void draw(Window window){
-        super.draw(window);
-    }
+    // public void draw(Window window){
+    //     super.draw(window);
+    // }
 
 }

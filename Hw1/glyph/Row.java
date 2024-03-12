@@ -7,28 +7,9 @@ import window.Window;
 public class Row extends Composition {
     
     public Row(SimpleCompositor compositor){
-        // setParent(null);
-        // getbounds().setBounds(0, 0, 0, 0);
         setCompositor(compositor);
-        // setChildren(new ArrayList<Glyph>());
         getCompositor().setComposition(this); // set the composition for the compositor
     }
-
-    // public void draw(Window window){
-    //     super.draw(window);
-    // }
-
-    // public Glyph getChild(int index) throws UnsupportedOperationException {
-    //     return super.getChild(index);
-    // }
-
-    // public void addChild(Glyph glyph, int index) throws UnsupportedOperationException {
-    //     super.addChild(glyph, index);
-    // }
-
-    // public void remove(Glyph glyph) throws UnsupportedOperationException {
-    //     super.remove(glyph);
-    // }
 
     public void setPosition(Bounds cursor) {
         getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());

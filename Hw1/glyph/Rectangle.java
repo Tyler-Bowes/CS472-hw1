@@ -7,7 +7,7 @@ public class Rectangle extends Glyph {
     // ** bounds keeps track of sizing **
 
     public Rectangle(int width, int height) {
-        // getbounds().setBounds(0, 0, width, height);
+        getbounds().setBounds(0, 0, width, height);
         setParent(null);
     }
 
