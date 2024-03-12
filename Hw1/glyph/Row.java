@@ -30,7 +30,7 @@ public class Row extends Composition {
         } 
         else { /* no need to update width */ }
         
-        getbounds().setBounds(getbounds().getX() + child.getbounds().getWidth(), getbounds().getY(), width, Height); 
+        getbounds().setBounds(getbounds().getX(), getbounds().getY(), width, Height); 
         
         cursor.setBounds(getbounds().getX(), getbounds().getY(), cursor.getWidth(), cursor.getHeight());;
         
