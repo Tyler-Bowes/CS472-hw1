@@ -12,7 +12,7 @@ public class Row extends Composition {
         // getCompositor().setComposition(this); // set the composition for the compositor
     }
 
-    public Bounds moveBounds(Bounds cursor, Glyph child) {
+    public void moveBounds(Bounds cursor, Glyph child) {
         Bounds child_bounds = child.getbounds();
         Bounds parent_bounds = getbounds();
 
@@ -29,7 +29,6 @@ public class Row extends Composition {
         
         cursor.setBounds(cursor.getX() + child_bounds.getWidth(), cursor.getY(), cursor.getWidth(), cursor.getHeight());;
         
-        return cursor;
     }
 
     public void adjustBounds (Bounds cursor) {

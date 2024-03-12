@@ -43,8 +43,7 @@ public class Embellishment extends Composition{
         current.compose();
     }
 
-    public Bounds moveBounds(Bounds cursor, Glyph child) {
-        return cursor;
+    public void moveBounds(Bounds cursor, Glyph child) {
     }
 
     public void adjustBounds(Bounds cursor) {

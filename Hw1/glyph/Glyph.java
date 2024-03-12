@@ -53,16 +53,10 @@ public abstract class Glyph {
     public Bounds getbounds() {
         return bounds;
     }
-    public void adjustBounds(Bounds cursor) {
-        throw new UnsupportedOperationException("Unimplemented method 'adjustBounds'");
-    }
+   
     public void compose() {
     }
-    public Bounds moveBounds(Bounds cursor, Glyph child) {
-        // TODO Auto-generated method stub
-        // System.out.println("Unimplemented method 'moveBounds'");
-        throw new UnsupportedOperationException("Unimplemented method 'moveBounds'");
-    }
+    
     
     public void setPosition(Bounds cursor) {
         getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());

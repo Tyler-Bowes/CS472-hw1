@@ -8,12 +8,12 @@ public abstract class Composition extends CompositeGlyph {
         this.compositor = compositor;
     }
 
-    public abstract Bounds moveBounds(Bounds cursor, Glyph child);
+    public abstract void moveBounds(Bounds cursor, Glyph child);
     public abstract void adjustBounds(Bounds cursor);
 
     public void compose(){
         this.compositor.setComposition(this);
-        getbounds().setBounds(0, 0, 0, 0);
+        getbounds().setBounds(this.getbounds().getX(), this.getbounds().getY(), 0, 0);
         this.compositor.compose();
     }
 
@@ -28,10 +28,9 @@ public abstract class Composition extends CompositeGlyph {
     public void addChild(Glyph glyph, int index) throws UnsupportedOperationException{
         super.addChild(glyph, index);
 
-        // glyph.setParent(this);
         Glyph current = this;
         while(current.getParent() != null) { // progress up the tree
-                current = current.getParent();
+            current = current.getParent();
         }
         current.compose();
     }
@@ -44,9 +43,5 @@ public abstract class Composition extends CompositeGlyph {
         }
         current.compose();
     }
-
-    // public void draw(Window window){
-    //     super.draw(window);
-    // }
 
 }
