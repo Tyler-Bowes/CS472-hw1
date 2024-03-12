@@ -15,7 +15,9 @@ public abstract class Composition extends CompositeGlyph {
     public abstract void adjustBounds(Bounds cursor);
 
     public void compose(){
-        compositor.compose();
+        this.compositor.setComposition(this);
+        getbounds().setBounds(0, 0, 0, 0);
+        this.compositor.compose();
     }
 
     public Compositor getCompositor(){
