@@ -7,21 +7,6 @@ import window.Window;
 public class Embellishment extends Composition{
 
 
-    public void addchild(Glyph glyph) {
-        
-        if (getChildren().size() == 0) { // no child yet
-            this.setParent(glyph.getParent());
-            getChildren().add(glyph);
-            glyph.setParent(this);
-        }
-
-        Glyph current = this;
-        while(current.getParent() != null) { // progress up the tree
-            current = current.getParent();
-        }
-        current.compose();
-    }
-
     @Override
     public void addChild(Glyph glyph, int index) throws UnsupportedOperationException { 
         try {
