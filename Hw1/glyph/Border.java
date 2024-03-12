@@ -11,8 +11,8 @@ public class Border extends Embellishment{
     public Border(Compositor compositor, Glyph glyph, int border_width){
         super(compositor, glyph);
         this.border_width = border_width;
-        // getbounds().setBounds(0, 0, 0, 0);
-        super.setChildren(new ArrayList<>());
+        getbounds().setBounds(border_width, border_width, 0, 0);
+        // super.setChildren(new ArrayList<>());
         super.setCompositor(compositor);
         super.getCompositor().setComposition(this); // set the composition for the compositor
     }

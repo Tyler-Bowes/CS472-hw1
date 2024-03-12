@@ -5,7 +5,7 @@ import glyph.Character; // has to be manually imported for some reason?
 
 public class main {
     public static void main(String[] args) {
-        test2();
+        hw1_test();
     }
 
     public static void hw1_test() {
