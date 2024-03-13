@@ -12,6 +12,17 @@ public class Row extends Composition {
         // getCompositor().setComposition(this); // set the composition for the compositor
     }
 
+    public Row(String string, SimpleCompositor compositor) {
+        super(compositor);
+        try {
+            for (int i = 0; i < string.length(); i++) {
+                addChild(new Character(string.charAt(i)), i);
+            }
+        } catch (UnsupportedOperationException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void moveBounds(Bounds cursor, Glyph child) {
         Bounds child_bounds = child.getbounds();
         Bounds parent_bounds = getbounds();
