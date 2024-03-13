@@ -27,12 +27,12 @@ public class Column extends Composition {
         
         parent_bounds.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height);
 
-        cursor.setBounds(cursor.getX(), cursor.getY() + child_bounds.getHeight(), cursor.getWidth(), cursor.getHeight());;
+        cursor.setBounds(cursor.getX(), cursor.getY() + child_bounds.getHeight(), cursor.getWidth(), cursor.getHeight());
     }
 
     public void adjustBounds (Bounds cursor) {
         // ajusting width of column
-        int height = cursor.getY() - getbounds().getY();
+        int height = cursor.getY() - getbounds().getHeight();
         getbounds().setBounds(getbounds().getX(), getbounds().getY(), getbounds().getWidth(), height);
     }
 

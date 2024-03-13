@@ -158,11 +158,13 @@ public class main {
         SimpleCompositor simcom2 = new SimpleCompositor(window);
         SimpleCompositor simcom3 = new SimpleCompositor(window);
         SimpleCompositor simcom4 = new SimpleCompositor(window);
+        SimpleCompositor simcom5 = new SimpleCompositor(window); 
         // create a character for each letter inside "this is a border demonstration. Scroller too!"
         Row row1 = new Row(simcom1);
         Row row2 = new Row(simcom2);
         Row row3 = new Row(simcom3);  
         Column col1 = new Column(simcom4);
+        Border border1 = new Border(simcom5, col1, 2);  
 
         try {
             row1.addChild(new Character('T'), 0);
@@ -210,14 +212,14 @@ public class main {
             row3.addChild(new Character('o'), 10);
             row3.addChild(new Character('o'), 11);
             row3.addChild(new Character('!'), 12);
-            
-            col1.addChild(row1, 0);
-            col1.addChild(row2, 1);
-            col1.addChild(row3, 2);
+
+            border1.addChild(row1, 0);
+            border1.addChild(row2, 1);
+            border1.addChild(row3, 2);
         } catch (UnsupportedOperationException e) {
             e.printStackTrace();
         }
 
-        window.setContents(col1);
+        window.setContents(border1);
     }
 }
