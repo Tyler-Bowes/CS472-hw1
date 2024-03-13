@@ -77,6 +77,8 @@ public class main {
         } catch (UnsupportedOperationException e) {
             e.printStackTrace();
         }
+
+        window.setContents(border1);
     }
 
     public static void test2(){
