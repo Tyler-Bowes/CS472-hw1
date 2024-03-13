@@ -2,6 +2,7 @@ package glyph;
 
 import window.Window;
 
+// Strategy
 public class SimpleCompositor implements Compositor{ // cannont extend b/c it's an interface
 
     private Composition composition;

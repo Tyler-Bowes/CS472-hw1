@@ -13,6 +13,11 @@ with three main design patterns, Composite, Strategy, and Decorator.  Every clas
 see UML for visual.  With the use of these strategies once the program runs it will
 open a text editor displaying what was prompted inside main.java. 
 
+This homework implements Decorator pattern by adding Embellishment class. This class
+is used to add borders and scrollers. For example a border is initialized with a Glyph
+and compositor, and you would then add glyphs to the border. The border then adds thoses
+glyphs into the initial glyph when initialized.  The scroller is the same way.
+
 # Included Files
 
 main.java
@@ -38,39 +43,55 @@ glyph-
 
 # Testing/Test Suit
 
-I first tested some functionality with have single glyphs like rectangles and characters.
+I first tested some functionality with have single glyphs like characters.
 After that, rows and columns with children.  As an example of a row with children being
-tested through main, I would do something like this inside of main():
+tested through main, I would create tests and call them inside of main(). For example,
+a test would look like this:
 
-    SimpleCompositor simcom = new SimpleCompositor(window);
-    Row row1 = new Row(simcom);
-    Glyph a = new Character('a');
-    Glyph X = new Character('X');
-    Glyph b = new Character('b');
-    Glyph rect1 = new Rectangle(10, 20);
-    
-    try {
-        row1.addChild(a, 0);
-        row1.addChild(rect1, 1);
-        row1.addChild(X, 2);
-        row1.addChild(b, 3);
-    } catch (UnsupportedOperationException e) {
-        e.printStackTrace();
+    public static void simpborder(){
+        Window window = new SwingWindow("Lexi 0");
+        SimpleCompositor simcom1 = new SimpleCompositor(window);
+        SimpleCompositor simcom2 = new SimpleCompositor(window);
+
+        Row row1 = new Row(simcom1);
+        Border border1 = new Border(simcom2, row1, 2);
+
+        Glyph X = new Character('X');
+        Glyph Y = new Character('Y');
+        Glyph Z = new Character('Z');
+
+        try {
+            border1.addChild(X, 0);
+            border1.addChild(Y, 1);
+            border1.addChild(Z, 2);
+        } catch (UnsupportedOperationException e) {
+            e.printStackTrace();
+        }
+
+        window.setContents(border1);
     }
-    window.setContents(row1);
 
-Then to test more, putting columns inside of this.  So, for sake of not putting more lines of
-code, I would replace the Character Glyph X with a colum full of X, Y, Z Characters.  And this would
-work with the current functionalitly of main.
+For this example I would then call simpborder() inside of main.
 
-Then I would put this entire row inside of a column so then I could add another row to the column.
-And that is as far as my testing went.
+To test more, I started putting borders inside of scrollers and vise 
+versa (like simpBorderScroller() test in main).  Then adding borders within rows/
+columns. 
 
 # Other Observations
 
-Currently spacing is "wonky", meaning myprogram, I think what looks like, doubles the spacing for the width
-and gives a little less than a full Glyph's height for the height. Other than than that minor spacing problem
-functionality of Lexi works fine.
+I did add the "fancy constructor" to the Row and Column classes. Current implementation
+works with rows but when working with multiple rows inside a column is where it gets funky.
+I know I have a problem with my column class, specifically with the spacing, espically 
+with the width, as it seems it doesn't update. 
+
+I tested this example by setting the column as an Embellishment of a border, consisting
+of three rows in the column. With current implementation, width seems to be negative (which
+sets the drawing of it to 0).  I have reason to believe that when testing like this, Compose()
+seems to execute twice, I have yet to figure out why this happens (reason: two print statements
+with the same data right next to eachother and 6 prints when adding 3 items).
+
+Rows seem to be working perfectly, it just seems like columns that are the problem. Which I 
+think is most strange.
 
 # Compiling 
 

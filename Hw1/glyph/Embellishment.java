@@ -4,6 +4,7 @@ import javax.naming.OperationNotSupportedException;
 
 import window.Window;
 
+// Decorator
 public class Embellishment extends Composition{
 
     public Embellishment(Compositor compositor, Glyph glyph) {
@@ -54,7 +55,7 @@ public class Embellishment extends Composition{
         int width = Math.max(parent_bounds.getX() + parent_bounds.getWidth(),
                             child_bounds.getX() + child_bounds.getWidth() - parent_bounds.getX()); 
 
-        parent_bounds.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height);
+        cursor.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height);
         return;
     }
 

@@ -4,6 +4,7 @@ package glyph;
 
 import window.Window;
 
+// Composite
 public class Row extends Composition {
     
     public Row(SimpleCompositor compositor){

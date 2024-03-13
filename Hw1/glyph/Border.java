@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import window.Window;
 
+// Decorator
 public class Border extends Embellishment{
     
     private int border_width;

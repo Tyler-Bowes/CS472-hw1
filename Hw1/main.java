@@ -10,6 +10,7 @@ public class main {
         // long_rows();
         // simpborder();
         simpBorderScroller();
+        // fancy_constructor_test();
     }
 
     public static void hw1_test() {

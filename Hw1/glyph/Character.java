@@ -2,6 +2,7 @@ package glyph;
 
 import window.Window;
 
+// Composite
 public class Character extends Glyph {
 
 	private char character;
@@ -9,8 +10,6 @@ public class Character extends Glyph {
 
     public Character(char character) {
 		this.character = character;
-        // getbounds().setBounds(0, 0, 0, 0); // initially 0
-        // setParent(null);
     }
 
     public void draw(Window window) {
@@ -23,8 +22,5 @@ public class Character extends Glyph {
         getbounds().setBounds(getbounds().getX(), getbounds().getY(), window.charWidth(character), window.charHeight(character));
     }
 
-    // public void setPosition(Bounds cursor) {
-    //     getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
-    // }
 }
 

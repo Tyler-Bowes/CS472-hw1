@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import window.Window;
 
+// Composite and Strategy
 public abstract class CompositeGlyph extends Glyph{
 
     private ArrayList<Glyph> children = new ArrayList<Glyph>();

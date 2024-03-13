@@ -4,6 +4,7 @@ import javax.naming.OperationNotSupportedException;
 
 import window.Window;
 
+// Composite
 public abstract class Glyph {
 
     private Glyph parent;

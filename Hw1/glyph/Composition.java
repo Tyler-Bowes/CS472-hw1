@@ -1,5 +1,6 @@
 package glyph;
 
+// Composite and Strategy
 public abstract class Composition extends CompositeGlyph {
     
     private Compositor compositor;
