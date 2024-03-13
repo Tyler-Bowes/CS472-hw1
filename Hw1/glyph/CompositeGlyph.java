@@ -46,9 +46,4 @@ public abstract class CompositeGlyph extends Glyph{
         return children;
     }
 
-    // public void setChildren(ArrayList<Glyph> children) {
-    //     this.children = children;
-    // }
-
-
 }

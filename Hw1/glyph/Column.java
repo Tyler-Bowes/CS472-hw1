@@ -1,12 +1,9 @@
 package glyph;
 
-// import java.util.ArrayList;
-
 import window.Window;
 
 // composite
 public class Column extends Composition {
-    // Implement the methods of the Glyph interface here
 
     public Column(SimpleCompositor compositor){
         super(compositor); // Call the superclass constructor

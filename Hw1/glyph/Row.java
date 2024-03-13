@@ -9,8 +9,6 @@ public class Row extends Composition {
     
     public Row(SimpleCompositor compositor){
         super(compositor); // Call the superclass constructor
-        // setCompositor(compositor);
-        // getCompositor().setComposition(this); // set the composition for the compositor
     }
 
     public Row(String string, SimpleCompositor compositor) {
@@ -35,8 +33,6 @@ public class Row extends Composition {
 
 
         // this ajusts the parent (current row) bounds and the cursor bounds
-        
-        
         parent_bounds.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height); 
         
         cursor.setBounds(cursor.getX() + child_bounds.getWidth(), cursor.getY(), cursor.getWidth(), cursor.getHeight());;
@@ -51,20 +47,7 @@ public class Row extends Composition {
 
     @Override
     public void setSize(Window window) {
-        // Glyph child;
-        // int maxHeight = 0;
-        // int width = 0;
-        // for (int index = 0; index < getChildren().size(); index++) {
-        //     if (getChild(index) != null) {
-        //         child = getChild(index);
-        //         if (maxHeight < child.getbounds().getHeight()) { // keep the maximum height of children
-        //             maxHeight = child.getbounds().getHeight();
-        //         }
-        //         width += child.getbounds().getWidth(); // sum the width of children
-        //     }
-        // }
-        // // set the width and height of column with all children
-        // getbounds().setBounds(getbounds().getX(), getbounds().getY(), width, maxHeight);
+       
     }
 
 }
