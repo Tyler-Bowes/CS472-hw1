@@ -52,7 +52,7 @@ public class Embellishment extends Composition{
     public void adjustBounds(Bounds cursor) {
         Bounds parent_bounds = getbounds();
         Bounds child_bounds = getChild().getbounds();
-        parent_bounds.setBounds(child_bounds.getX(),child_bounds.getY(), child_bounds.getWidth(), child_bounds.getHeight());
+        parent_bounds.setBounds(parent_bounds.getX(),parent_bounds.getY(), child_bounds.getWidth(), child_bounds.getHeight());
     }
 
     public void setSize(Window window) {
