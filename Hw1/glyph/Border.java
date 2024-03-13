@@ -20,13 +20,21 @@ public class Border extends Embellishment{
     public void draw(Window window){
         super.draw(window);
         
-        window.addBorder(getChild().getbounds().getX(), getChild().getbounds().getY(), 
-                         getChild().getbounds().getX() + getChild().getbounds().getWidth() + 3,
-                         getChild().getbounds().getY() + getChild().getbounds().getHeight() + 3,
+        Bounds parent_bounds = getbounds();
+        Bounds child_bounds = getChild().getbounds();
+
+        // used hard coded values to make border look nice
+        window.addBorder(parent_bounds.getX() - 2, parent_bounds.getY() - 1, 
+                         child_bounds.getX() + child_bounds.getWidth() + 3,
+                         child_bounds.getY() + child_bounds.getHeight() + 3,
                          border_width);
     }
 
     // public setPosition
+
+    // public void setPosition(Bounds cursor) {
+    //     getbounds().setBounds(cursor.getX(), cursor.getY(), getbounds().getWidth(), getbounds().getHeight());
+    // }
 
     // public
 
