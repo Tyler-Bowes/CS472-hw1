@@ -46,20 +46,27 @@ public class Embellishment extends Composition{
     }
 
     public void moveBounds(Bounds cursor, Glyph child) {
+        Bounds parent_bounds = getbounds();
+        Bounds child_bounds = child.getbounds();
+
+        int Height = Math.max(parent_bounds.getY() + parent_bounds.getHeight(),
+                               child_bounds.getY() + child_bounds.getHeight() - parent_bounds.getY());        
+        int width = Math.max(parent_bounds.getX() + parent_bounds.getWidth(),
+                            child_bounds.getX() + child_bounds.getWidth() - parent_bounds.getX()); 
+
+        parent_bounds.setBounds(parent_bounds.getX(), parent_bounds.getY(), width, Height);
         return;
     }
 
     public void adjustBounds(Bounds cursor) {
-        Bounds parent_bounds = getbounds();
-        Bounds child_bounds = getChild().getbounds();
-        parent_bounds.setBounds(parent_bounds.getX(),parent_bounds.getY(), child_bounds.getWidth(), child_bounds.getHeight());
+        return;
     }
 
     public void setSize(Window window) {
-        getChild().setSize(window);
+        return;
     }
     
-    public Glyph getChild() { //getting the *single* composition that's being embellished
+    public Glyph getChild() { //getting composition that's being embellished
         return getChildren().get(0);
     }
 

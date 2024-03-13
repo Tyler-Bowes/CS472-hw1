@@ -30,6 +30,19 @@ public class Border extends Embellishment{
                          border_width);
     }
 
+    @Override
+    public void adjustBounds(Bounds cursor) {
+        // super.adjustBounds(cursor);
+        
+        // System.out.println("Adjust: " + getbounds().getX() + " " + getbounds().getY() + " " + getbounds().getWidth() + " " + getbounds().getHeight());
+        // getbounds().setBounds(getbounds().getX(),
+        //  getbounds().getY(), 
+        //  getbounds().getWidth() + cursor.getWidth(), 
+        //  getbounds().getHeight() + cursor.getHeight());
+    }
+
+
+
     // public setPosition
 
     // public void setPosition(Bounds cursor) {

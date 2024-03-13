@@ -6,7 +6,10 @@ import glyph.Character; // has to be manually imported for some reason?
 public class main {
     public static void main(String[] args) {
         // hw1_test();
-        long_rows();
+        // hw2_test();
+        // long_rows();
+        // simpborder();
+        simpBorderScroller();
     }
 
     public static void hw1_test() {
@@ -79,6 +82,31 @@ public class main {
         }
 
         window.setContents(border1);
+    }
+
+    public static void simpBorderScroller(){
+        Window window = new SwingWindow("Lexi 0");
+        SimpleCompositor simcom1 = new SimpleCompositor(window);
+        SimpleCompositor simcom2 = new SimpleCompositor(window);
+        SimpleCompositor simcom3 = new SimpleCompositor(window);
+
+        Row row1 = new Row(simcom1);
+        Scroller scroller1 = new Scroller(simcom2, row1);
+        Border border1 = new Border(simcom3, scroller1, 2);
+
+        Glyph X = new Character('X');
+        Glyph Y = new Character('Y');
+        Glyph Z = new Character('Z');
+
+        try {
+            border1.addChild(X, 0);
+            border1.addChild(Y, 1);
+            border1.addChild(Z, 2);
+        } catch (UnsupportedOperationException e) {
+            e.printStackTrace();
+        }
+        window.setContents(border1);
+
     }
 
     public static void hw2_test(){
