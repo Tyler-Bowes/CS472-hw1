@@ -8,7 +8,7 @@ public class Embellishment extends Composition{
 
     public Embellishment(Compositor compositor, Glyph glyph) {
         super(compositor);
-        super.addChild(getParent(), 0);
+        super.addChild(glyph, 0);
     }
 
     public void addChild(Glyph glyph, int index) throws UnsupportedOperationException { 
@@ -19,7 +19,7 @@ public class Embellishment extends Composition{
             e.printStackTrace();
         }
         
-        glyph.setParent(getChildren().get(0)); // set the parent of the child to the composition
+        glyph.setParent(getChild()); // set the parent of the child to the composition
 
         Glyph current = this;
         while(current.getParent() != null) { // progress up the tree
@@ -30,11 +30,13 @@ public class Embellishment extends Composition{
 
     public void remove(Glyph glyph) throws UnsupportedOperationException {
         try {
-            getChildren().get(0).remove(glyph);
+            getChild().remove(glyph);
         } catch (OperationNotSupportedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        glyph.setParent(null);
 
         Glyph current = this;
         while(current.getParent() != null) { // progress up the tree
@@ -44,15 +46,17 @@ public class Embellishment extends Composition{
     }
 
     public void moveBounds(Bounds cursor, Glyph child) {
+        return;
     }
 
     public void adjustBounds(Bounds cursor) {
-        Bounds bounds = getChildren().get(0).getbounds();
-        getbounds().setBounds(bounds.getX(),bounds.getY(), bounds.getWidth(), bounds.getHeight());
+        Bounds parent_bounds = getbounds();
+        Bounds child_bounds = getChild().getbounds();
+        parent_bounds.setBounds(child_bounds.getX(),child_bounds.getY(), child_bounds.getWidth(), child_bounds.getHeight());
     }
 
     public void setSize(Window window) {
-        getChildren().get(0).setSize(window);
+        getChild().setSize(window);
     }
     
     public Glyph getChild() { //getting the *single* composition that's being embellished

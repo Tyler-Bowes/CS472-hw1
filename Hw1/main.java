@@ -5,7 +5,8 @@ import glyph.Character; // has to be manually imported for some reason?
 
 public class main {
     public static void main(String[] args) {
-        hw1_test();
+        // hw1_test();
+        simpborder();
     }
 
     public static void hw1_test() {
@@ -55,6 +56,27 @@ public class main {
         }
 
         window.setContents(col2);
+    }
+
+    public static void simpborder(){
+        Window window = new SwingWindow("Lexi 0");
+        SimpleCompositor simcom1 = new SimpleCompositor(window);
+        SimpleCompositor simcom2 = new SimpleCompositor(window);
+
+        Row row1 = new Row(simcom1);
+        Border border1 = new Border(simcom2, row1, 2);
+
+        Glyph X = new Character('X');
+        Glyph Y = new Character('Y');
+        Glyph Z = new Character('Z');
+
+        try {
+            border1.addChild(X, 0);
+            border1.addChild(Y, 1);
+            border1.addChild(Z, 2);
+        } catch (UnsupportedOperationException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void test2(){

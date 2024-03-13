@@ -28,6 +28,8 @@ public class Border extends Embellishment{
 
     // public setPosition
 
+    // public
+
     // // set position x + size, y + size
 
     // adjustBounds
